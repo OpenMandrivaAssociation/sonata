@@ -1,6 +1,6 @@
 %define name sonata
 %define version 1.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: An elegant music client for MPD
 Name: %{name}
@@ -18,7 +18,7 @@ BuildRequires:	python-devel
 BuildRequires:	pygtk2.0-libglade
 
 Requires:	dbus-python >= 0.80
-Requires:	notify-python
+Requires:	python-notify
 Requires:	pygtk2
 Requires:       python-celementtree
 Requires:       python-soap
