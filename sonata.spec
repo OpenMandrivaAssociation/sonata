@@ -11,6 +11,7 @@ Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.bz2
 License: GPL
 Group: Sound
 Url: http://sonata.berlios.de/index.html
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	pygtk2.0-devel
 BuildRequires:	python-devel
