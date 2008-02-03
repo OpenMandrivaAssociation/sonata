@@ -60,7 +60,6 @@ mkdir -p %{buildroot}/usr
 mkdir -p %{buildroot}/%{_datadir}
 mkdir -p %{buildroot}/%{_docdir}/%{name}
 mkdir -p %{buildroot}/%{_mandir}
-mv %{buildroot}/usr/man/* %{buildroot}/%{_mandir}
 mv %{buildroot}/%{_datadir}/sonata/{CHANGELOG,README,TODO,TRANSLATORS} %{buildroot}/%{_docdir}/%{name}/
 
 %find_lang %{name}
