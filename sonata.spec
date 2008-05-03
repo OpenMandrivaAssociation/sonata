@@ -1,5 +1,5 @@
 %define name sonata
-%define version 1.4.2
+%define version 1.5
 %define release %mkrel 1
 
 Summary: An elegant music client for MPD
@@ -7,7 +7,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Epoch: 1
-Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.gz
+Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.bz2
 License: GPLv2+
 Group: Sound
 Url: http://sonata.berlios.de/index.html
