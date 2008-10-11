@@ -1,6 +1,6 @@
 %define name sonata
-%define version 1.5.2
-%define release %mkrel 2
+%define version 1.5.3
+%define release %mkrel 1
 
 Summary: An elegant music client for MPD
 Name: %{name}
