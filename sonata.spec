@@ -1,11 +1,7 @@
-%define name sonata
-%define version 1.6.2.1
-%define release %mkrel 2
-
 Summary: An elegant music client for MPD
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name: sonata
+Version: 1.6.2.1
+Release: 3
 Epoch: 1
 Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.bz2
 License: GPLv2+
