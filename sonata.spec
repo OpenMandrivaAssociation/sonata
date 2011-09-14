@@ -4,6 +4,7 @@ Version: 1.6.2.1
 Release: 3
 Epoch: 1
 Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.bz2
+Patch0:	sonata-fix_link.patch
 License: GPLv2+
 Group: Sound
 Url: http://sonata.berlios.de/index.html
@@ -16,10 +17,11 @@ BuildRequires:	pygtk2.0-libglade
 Requires:	dbus-python >= 0.80
 Requires:	python-notify
 Requires:	pygtk2
-Requires:       python-celementtree
-Requires:       python-soap
-Requires:       python-tagpy
+Requires:	python-celementtree
+Requires:	python-soap
+Requires:	python-tagpy
 Requires:	python-mpd
+Requires:	gnome-python-gnomevfs
 
 %description
 Sonata is an elegant GTK+ music client for the Music Player Daemon (MPD).
@@ -43,6 +45,7 @@ Features :
 
 %prep
 %setup -q
+%patch0 -p0
 
 
 %build
