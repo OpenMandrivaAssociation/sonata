@@ -1,7 +1,7 @@
 Summary: An elegant music client for MPD
 Name: sonata
 Version: 1.6.2.1
-Release: 3
+Release: 4
 Epoch: 1
 Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.bz2
 Patch0:	sonata-fix_link.patch
