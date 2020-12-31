@@ -1,27 +1,23 @@
 Summary: An elegant music client for MPD
 Name: sonata
-Version: 1.6.2.1
-Release: 4
+Version: 1.7.0
+Release: 1
 Epoch: 1
-Source0: http://download.berlios.de/sonata/%{name}-%{version}.tar.bz2
-Patch0:	sonata-fix_link.patch
 License: GPLv2+
 Group: Sound
-Url: http://sonata.berlios.de/index.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl(XML::Parser)
-BuildRequires:	pygtk2.0-devel
-BuildRequires:	python-devel
-BuildRequires:	pygtk2.0-libglade
+Url:		http://www.nongnu.org/sonata/
+Source0:	https://github.com/multani/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 
-Requires:	dbus-python >= 0.80
-Requires:	python-notify
-Requires:	pygtk2
-Requires:	python-celementtree
-Requires:	python-soap
-Requires:	python-tagpy
-Requires:	python-mpd
-Requires:	gnome-python-gnomevfs
+BuildArch:	noarch
+BuildRequires:	perl(XML::Parser)
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python3dist(setuptools)
+Requires:	mpd
+Requires: python-dbus
+Requires: python3dist(pygobject)
+Requires: python-mpd2
+Recommends: python3-tagpy
+
 
 %description
 Sonata is an elegant GTK+ music client for the Music Player Daemon (MPD).
@@ -45,37 +41,31 @@ Features :
 
 %prep
 %setup -q
-%patch0 -p0
 
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
-rm -rf %buildroot
+%py_install
 
-%{__python} setup.py install --no-compile --prefix %{buildroot}/usr
-
-mkdir -p %{buildroot}/usr
-mkdir -p %{buildroot}/%{_datadir}
-mkdir -p %{buildroot}/%{_docdir}/%{name}
-mkdir -p %{buildroot}/%{_mandir}
-mv %{buildroot}/%{_datadir}/sonata/{CHANGELOG,README,TODO,TRANSLATORS} %{buildroot}/%{_docdir}/%{name}/
+mkdir -p %{buildroot}%{_prefix}
+mkdir -p %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_docdir}/%{name}
+mkdir -p %{buildroot}%{_mandir}
+install -m644 sonata/pixmaps/%{name}.png -D %{buildroot}%{_datadir}/pixmaps/%{name}.png
+rm -f %{buildroot}%{_datadir}/%{name}/{CHANGELOG,README.rst,TODO,TRANSLATORS}
 
 %find_lang %{name}
 
-%clean
-rm -rf %buildroot
-
 %files -f %{name}.lang
-%defattr(-,root,root,-)
-%doc CHANGELOG README TODO TRANSLATORS
+%doc CHANGELOG README.rst TODO TRANSLATORS PLUGINS.rst
+%license COPYING
 %{_bindir}/%{name}
-%{py_platsitedir}/*
+%{python3_sitelib}/*
 %{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
-
 
 %changelog
 * Wed Sep 14 2011 Matthew Dawkins <mattydaw@mandriva.org> 1:1.6.2.1-3
