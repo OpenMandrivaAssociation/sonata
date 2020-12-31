@@ -16,7 +16,7 @@ Requires:	mpd
 Requires: python-dbus
 Requires: python3dist(pygobject)
 Requires: python-mpd2
-Recommends: python3-tagpy
+Recommends: python-tagpy
 
 
 %description
@@ -41,7 +41,6 @@ Features :
 
 %prep
 %setup -q
-
 
 %build
 %py_build
