@@ -59,11 +59,16 @@ Features :
 %install
 %py_install
 
-install -Dm 0755 %{buildroot}%{_prefix}
-install -Dm 0755 %{buildroot}%{_datadir}
-install -Dm 0755 %{buildroot}%{_docdir}/%{name}
-install -Dm 0755 %{buildroot}%{_mandir}
-install -m  0644 sonata/pixmaps/%{name}.png -D %{buildroot}%{_datadir}/pixmaps/%{name}.png
+#install -Dm 0755 %{buildroot}%{_prefix}
+#install -Dm 0755 %{buildroot}%{_datadir}
+#install -Dm 0755 %{buildroot}%{_docdir}/%{name}
+#install -Dm 0755 %{buildroot}%{_mandir}
+
+# icon
+install -dm 0755 %{buildroot}%{_datadir}/pixmaps
+install -pm 0644 sonata/pixmaps/%{name}.png %{buildroot}%{_datadir}/pixmaps/%{name}.png
+
+# remove docs
 rm -f %{buildroot}%{_datadir}/%{name}/{CHANGELOG,README.rst,TODO,TRANSLATORS}
 
 # locales
