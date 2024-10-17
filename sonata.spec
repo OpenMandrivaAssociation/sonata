@@ -4,7 +4,7 @@ Version:	1.7.0
 Release:	2
 License:	GPLv2+
 Group:		Sound
-Url:		http://www.nongnu.org/sonata/
+Url:		https://www.nongnu.org/sonata/
 Source0:	https://github.com/multani/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	pkgconfig(python)
