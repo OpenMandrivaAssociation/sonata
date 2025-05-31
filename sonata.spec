@@ -9,6 +9,7 @@ Source0:	https://github.com/multani/%{name}/archive/v%{version}/%{name}-%{versio
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python3dist(setuptools)
+BuildRequires: gettext
 
 Requires:	mpd
 Requires:	python-dbus
