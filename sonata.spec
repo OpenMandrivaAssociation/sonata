@@ -1,20 +1,20 @@
 Summary:	An elegant music client for MPD
 Name:		sonata
 Version:	1.7.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Sound
 Url:		https://www.nongnu.org/sonata/
 Source0:	https://github.com/multani/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	pkgconfig(python)
-BuildRequires:	python3dist(setuptools)
+BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires: gettext
 
 Requires:	mpd
-Requires:	python-dbus
-Requires:	python3dist(pygobject)
-Requires:	python-mpd2
+Requires:	python%{pyver}dist(dbus)
+Requires:	python%{pyver}dist(pygobject)
+Requires:	python%{pyver}dist(mpd2)
 
 Recommends:	python-tagpy
 
