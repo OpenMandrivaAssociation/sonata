@@ -16,7 +16,7 @@ BuildRequires: gettext
 Requires:	mpd
 Requires: python%{pyver}dist(dbus-python)
 Requires:	python%{pyver}dist(pygobject)
-Requires:	python%{pyver}dist(mpd2)
+Requires:	python%{pyver}dist(python-mpd2)
 
 Recommends:	python-tagpy
 
