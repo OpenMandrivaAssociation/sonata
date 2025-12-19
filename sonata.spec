@@ -9,10 +9,12 @@ Source0:	https://github.com/multani/%{name}/archive/v%{version}/%{name}-%{versio
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires: python%{pyver}dist(dbus-python)
+
 BuildRequires: gettext
 
 Requires:	mpd
-Requires:	python%{pyver}dist(dbus)
+Requires: python%{pyver}dist(dbus-python)
 Requires:	python%{pyver}dist(pygobject)
 Requires:	python%{pyver}dist(mpd2)
 
