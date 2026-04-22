@@ -1,7 +1,7 @@
 Summary:	An elegant music client for MPD
 Name:		sonata
-Version:	1.7.2
-Release:	2
+Version:	1.7.3
+Release:	1
 License:	GPLv2+
 Group:		Sound
 Url:		https://www.nongnu.org/sonata/
